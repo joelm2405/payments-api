@@ -4,6 +4,9 @@ FROM node:16-alpine
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
+# Instala nodemon globalmente
+RUN npm install -g nodemon
+
 # Copia el package.json y package-lock.json
 COPY package*.json ./
 
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 3000
 
 # Comando para ejecutar la aplicación con nodemon
-CMD ["npx", "nodemon", "index.js"]
+CMD ["nodemon", "index.js"]
