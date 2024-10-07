@@ -4,6 +4,21 @@ const pagoController = require('./controllers/pagoController');
 
 const router = express.Router();
 
+
+/**
+ * @swagger
+ * /:
+ *   get:
+ *     summary: Muestra un mensaje de bienvenida
+ *     responses:
+ *       200:
+ *         description: Bienvenido a la API
+ */
+router.get('/', (req, res) => {
+    res.status(200).send('Bienvenido a la API');
+  });
+
+
 /**
  * @swagger
  * /payment-methods:
